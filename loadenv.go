@@ -19,6 +19,9 @@ func Load(envfiles ...string) error {
 	envfiles = defaultCheck(envfiles)
 
 	for _, envfilename := range envfiles {
+		if len(envfilename) == 0 {
+			continue
+		}
 		err := loadSingeEnvFile(envfilename)
 
 		if err != nil {
@@ -38,14 +41,11 @@ func defaultCheck(envfiles []string) []string {
 	return envfiles
 }
 
-func loadSingeEnvFile(singleEnvFile string) error {
+func loadSingeEnvFile(envfilename string) error {
 
 	envMap := make(map[string]string)
 
-	if len(singleEnvFile) == 0 {
-		return nil
-	}
-	file, err := os.Open(singleEnvFile)
+	file, err := os.Open(envfilename)
 	if err != nil {
 		return err
 	}
