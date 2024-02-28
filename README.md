@@ -2,6 +2,7 @@
 Load Environment variables from .env files
 
 A simple and lightweight Go lang module to load environment variables from .env or other files.
+[Source: https://github.com/prakis/loadenv/](https://github.com/prakis/loadenv/)
 Please note that this is still in beta, I highly recommend [godotenv](https://github.com/joho/godotenv) OR [dotenvx](https://github.com/dotenvx/dotenvx).
 
 # Installation
